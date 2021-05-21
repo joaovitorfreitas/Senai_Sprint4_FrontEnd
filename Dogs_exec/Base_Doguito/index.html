@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="styles.css" /> 
+        <title>Doguitos</title> 
+    </head>
+    <body>
+        <h1>SITE DE DOGUINHOS</h1>
+        <div id="dog1">
+            <img class="imagem1" src="Ibageins/2.jpeg" alt="Sammy"/> 
+            <h2>Sammy</h2>
+        </div>
+        <div id="dog2">
+            <img class="imagem2" src="Ibageins/3.jpeg" alt="Dragão"/> 
+            <h2>Dragão</h2>
+        </div>
+        <div id="dog3">
+            <img class="imagem3" src="Ibageins/4.jpeg" alt="Milton"/> 
+            <h2>Milton</h2>
+        </div>
+        <div id="dog4">
+            <img class="imagem4" src="Ibageins/5.jpeg" alt="Penny"/> 
+            <h2>Penny</h2>
+        </div>
+        <div id="dog5">
+            <img class="imagem5" src="Ibageins/6.jpeg" alt="Nenem"/> 
+            <h2>Nenem</h2>
+        </div>
+        <div id="botauns">
+            <input id="btn" type="button" value="Nome dos Spitz" onclick="soSpitz()"/> <!--Filter  -->
+            <input id="btn" type="button" value="Idade Real" onclick="idadeReal()"/> <!-- Map -->
+            <input id="btn" type="button" value="Soma todas as Idades" onclick="idadeSoma()"/> <!-- Reduce -->
+            <input id="btn" type="button" value="Piorar Site" onclick="mudaTudo()"/>
+        </div>
+
+        <script> 
+        dogs = [
+            {
+                nome: 'Sammy',
+                idade: 6,
+                raca: 'Samoieda'
+            },
+            {
+                nome: 'Dragão',
+                idade: 5,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Milton',
+                idade: 8,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Penny',
+                idade: 6,
+                raca: 'Spitz Alemão'
+            },
+            {
+                nome: 'Nenem',
+                idade: 4,
+                raca: 'Spitz Alemão'
+            },
+            ];
+
+             function idadeSoma(){
+             var soma = dogs.reduce(function(total, item){
+             return total + item.idade
+            }, 0);
+
+            alert(soma)
+            }
+            
+
+                    
+         function idadeReal(){
+          dogs.map(function(n){
+          return alert(`${n.nome} ${n.idade}`)
+          })
+          }
+
+          function soSpitz(){
+             var ValidateDogs = dogs.filter(function (n) {
+            return n.raca === "Spitz Alemão"
+             })
+
+             ValidateDogs.forEach(e => {
+                 return alert(e.nome)
+             });
+         }
+
+
+
+           function mudaTudo(){
+            document.querySelector("body").style.backgroundImage = "none"
+            document.querySelector("body").style.backgroundColor = "purple"
+            document.getElementById("dog1").style.backgroundColor = "purple"
+            document.getElementById("dog2").style.backgroundColor = "purple"
+            document.getElementById("dog3").style.backgroundColor = "purple"
+            document.getElementById("dog4").style.backgroundColor = "purple"
+            document.getElementById("dog5").style.backgroundColor = "purple"
+
+            
+            document.getElementsByTagName("h1")[0].style.color = "black"
+
+            var x = document.getElementsByTagName("h2")
+
+            for(var i = 0; i < x.length; i++){
+
+                x[i].style.color = "black"
+            }
+
+            var imagem = document.querySelector(".imagem1")
+            imagem.setAttribute("src", "Ibageins/7.jpeg")
+
+            imagem = document.querySelector(".imagem2")
+            imagem.setAttribute("src", "Ibageins/8.jpeg")
+
+            imagem = document.querySelector(".imagem3")
+            imagem.setAttribute("src", "Ibageins/9.jpeg")
+
+            imagem = document.querySelector(".imagem4")
+            imagem.setAttribute("src", "Ibageins/10.jpg")
+
+            imagem = document.querySelector(".imagem5")
+            imagem.setAttribute("src", "Ibageins/11.jpg")
+
+          document.getElementsByTagName("h2")[0].innerHTML = "Samira"
+          document.getElementsByTagName("h2")[1].innerHTML = "Darui"
+          document.getElementsByTagName("h2")[2].innerHTML = "Lice"
+          document.getElementsByTagName("h2")[3].innerHTML = "queline"
+          document.getElementsByTagName("h2")[4].innerHTML = "jaq"
+
+           }
+                
+
+            //solta seus script brabos aqui
+        </script> 
+    </body>
+</html>

@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 10vh;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    margin-left: 14vw;
+}
+
+header button{
+    margin-right: 14vw;
+    background-color: white;
+    border: 2px solid #1858F2;
+    font-weight: bold;
+    color: #1858F2;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 140px;
+    height: 38px;
+}
+.imgheader{
+    width: 60px;
+    height: 60px;
+}
